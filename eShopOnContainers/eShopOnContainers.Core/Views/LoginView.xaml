@@ -14,7 +14,35 @@
                 Shell.FlyoutBehavior="Disabled"
                 Shell.NavBarIsVisible="False"
                 Shell.TabBarIsVisible="False">
-    <ContentPage.Title>
+
+    <ContentPage.BindingContext>
+        <viewmodels:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Padding="20" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" VerticalOptions="Center">
+                <Image Source="a101kapida.png"
+                       WidthRequest="100" HeightRequest="200"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Spacing="10">
+                <Entry Placeholder="Kullanıcı adınızı giriniz" FontSize="Medium" Text="{Binding Username}"/>
+                <Entry Placeholder="Şifrenizi giriniz" FontSize="Medium"  Text="{Binding Password}" IsPassword="True"/>
+                <Button Text="Giriş Yap" HorizontalOptions="Center" BackgroundColor="DarkRed"
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                        Command="{Binding LoginCommand}"/>
+                <Label Text="Üye değil misiniz ?"/>
+                <Button Text="Kayıt Ol" HorizontalOptions="Center" BackgroundColor="DarkRed"
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                        Command="{Binding RegisterCommand}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+
+    <!--<ContentPage.Title>
         <OnPlatform x:TypeArguments="x:String">
             <On Platform="iOS, UWP, WinRT, WinPhone" Value="eShop on Containers" />
         </OnPlatform>
@@ -113,7 +141,7 @@
         </EventTrigger>
     </ContentPage.Triggers>
     <Grid>
-        <!-- MOCK AUTH -->
+        --><!-- MOCK AUTH --><!--
         <Grid
             x:Name="LoginPanel"
             IsVisible="{Binding IsMock}"
@@ -127,7 +155,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="60" />
             </Grid.RowDefinitions>
-            <!-- LOGIN / REGISTER / SETTINGS -->
+            --><!-- LOGIN / REGISTER / SETTINGS --><!--
             <Grid   
                 Grid.Row="0"
                 Margin="48, 24">
@@ -170,12 +198,12 @@
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
             </Grid>
-            <!-- INFO -->
+            --><!-- INFO --><!--
             <Label
               Grid.Row="1"
               Text="ARE YOU REGISTERED?"
               Style="{StaticResource TitleLabelStyle}"/>
-            <!-- LOGIN FORM -->
+            --><!-- LOGIN FORM --><!--
             <StackLayout   
                 Grid.Row="3"
                 Margin="24">
@@ -243,7 +271,7 @@
                     Source="eshop_logo.png"
                     Aspect="AspectFit" />
             </Frame>
-            <!-- LOGIN BUTTON -->
+            --><!-- LOGIN BUTTON --><!--
             <Grid
                 BackgroundColor="{StaticResource LightGreenColor}"
                 Grid.Row="4"
@@ -260,7 +288,7 @@
                 </Grid.GestureRecognizers>
             </Grid>
         </Grid>
-        <!-- AUTH -->
+        --><!-- AUTH --><!--
         <Grid
           ColumnSpacing="0"
           RowSpacing="0"
@@ -274,7 +302,7 @@
                 <ColumnDefinition />
                 <ColumnDefinition Width="64" />
             </Grid.ColumnDefinitions>
-            <!-- BANNER -->
+            --><!-- BANNER --><!--
             <Image
                 x:Name="Banner"
                 Grid.Row="0"
@@ -289,7 +317,7 @@
                 Grid.ColumnSpan="3"
                 BackgroundColor="{StaticResource BlackColor}"
                 Opacity="0.5"/>
-            <!-- LOG IN BUTTON -->
+            --><!-- LOG IN BUTTON --><!--
             <Grid
                 Grid.Column="0"
                 Grid.Row="1"
@@ -303,7 +331,7 @@
                         NumberOfTapsRequired="1" />
                 </Grid.GestureRecognizers>
             </Grid>
-            <!-- REGISTER BUTTON -->
+            --><!-- REGISTER BUTTON --><!--
             <Grid
                 Grid.Column="1"
                 Grid.Row="1"
@@ -317,7 +345,7 @@
                         NumberOfTapsRequired="1" />
                 </Grid.GestureRecognizers>
             </Grid>
-            <!-- SETTINGS -->
+            --><!-- SETTINGS --><!--
             <Grid
                 Grid.Column="2"
                 Grid.Row="1"
@@ -329,7 +357,7 @@
                         NumberOfTapsRequired="1" />
                 </Grid.GestureRecognizers>
             </Grid>
-            <!-- WEBVIEW -->
+            --><!-- WEBVIEW --><!--
             <WebView     
                 Source="{Binding LoginUrl}"
                 Grid.Column="0"
@@ -345,7 +373,7 @@
                 </WebView.Behaviors>
             </WebView>
         </Grid>
-        <!-- INDICATOR -->
+        --><!-- INDICATOR --><!--
         <ActivityIndicator      
           Color="{StaticResource LightGreenColor}"
           IsRunning="{Binding IsBusy}"
@@ -359,5 +387,5 @@
                 </OnPlatform>
             </ActivityIndicator.WidthRequest>
         </ActivityIndicator>
-    </Grid>
+    </Grid>-->
 </ContentPage>
