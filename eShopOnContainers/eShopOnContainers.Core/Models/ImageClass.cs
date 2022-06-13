@@ -4,7 +4,7 @@ using System.Text;
 
 namespace eShopOnContainers.Core.Models
 {
-    class ImageClass
+    public class ImageClass
     {
         public string foto { get; set; }
     }
