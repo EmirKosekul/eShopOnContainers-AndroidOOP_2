@@ -29,7 +29,7 @@ namespace eShopOnContainers.Core.Views
 
         private async void Domates_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new MeyveVeSebze());
+            await Navigation.PushAsync(new MeyveVeSebze());
         }
         private async void Icecek_Clicked(object sender, EventArgs e)
         {
