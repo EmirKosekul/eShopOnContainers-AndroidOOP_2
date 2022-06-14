@@ -31,12 +31,13 @@
             <StackLayout Grid.Row="1" Spacing="10">
                 <Entry Placeholder="Kullanıcı adınızı giriniz" FontSize="Medium" Text="{Binding Username}"/>
                 <Entry Placeholder="Şifrenizi giriniz" FontSize="Medium"  Text="{Binding Password}" IsPassword="True"/>
-                <Button Text="Giriş Yap" HorizontalOptions="Center" BackgroundColor="DarkRed"
-                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                <Label Text="                    Zaten üye misiniz? Giriş Yapın."/>
+                <Button Text="Giriş Yap" HorizontalOptions="Center" BackgroundColor="White"
+                        TextColor="#1AC4D7" WidthRequest="200" HeightRequest="60" CornerRadius="20" BorderColor="#1AC4D7" BorderWidth="1"
                         Command="{Binding LoginCommand}"/>
-                <Label Text="Üye değil misiniz ?"/>
-                <Button Text="Kayıt Ol" HorizontalOptions="Center" BackgroundColor="DarkRed"
-                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                <Label Text="              Üye olmak için Kayıt Ol Butonuna Tıklayın."/>
+                <Button Text="Kayıt Ol" HorizontalOptions="Center" BackgroundColor="White"
+                        TextColor="#1AC4D7" WidthRequest="200" HeightRequest="60" CornerRadius="20" BorderColor="#1AC4D7" BorderWidth="1"
                         Command="{Binding RegisterCommand}"/>
             </StackLayout>
         </Grid>

@@ -93,13 +93,13 @@ namespace eShopOnContainers.Core.ViewModels
                 var userService = new UserService();
                 Result = await userService.RegisterUser(Username, Password);
                 if (Result)
-                    await Application.Current.MainPage.DisplayAlert("Success", "Registerede", "OK");
+                    await Application.Current.MainPage.DisplayAlert("Başarılı", "Kayıt Olundu", "OK");
                 else
-                    await Application.Current.MainPage.DisplayAlert("Error", "User already exists with this credentials", "OK");
+                    await Application.Current.MainPage.DisplayAlert("Hata", "Kullanıcı zaten mevcut.", "OK");
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+                await Application.Current.MainPage.DisplayAlert("Hata", ex.Message, "OK");
             }
             finally
             {
@@ -120,7 +120,8 @@ namespace eShopOnContainers.Core.ViewModels
                 {
                     Preferences.Set("Username", Username);
                     //await Application.Current.MainPage.Navigation.PushModalAsync(new CatalogView());
-                    await App.Current.MainPage.Navigation.PushAsync(new Anasayfa());
+                    //await App.Current.MainPage.Navigation.PushAsync(new Anasayfa());
+                    await Shell.Current.GoToAsync("//Main");
                 }
                 else
                 {

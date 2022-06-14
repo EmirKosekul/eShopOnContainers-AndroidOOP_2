@@ -21,6 +21,9 @@
             <Style TargetType="views:Anasayfa">
                 <Setter Property="BackgroundColor" Value="#E8EBEC"></Setter>
             </Style>
+            <Style TargetType="views:LoginView">
+                <Setter Property="BackgroundColor" Value="White"></Setter>
+            </Style>
             <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
             <Style BasedOn="{StaticResource BaseStyle}" TargetType="FlyoutItem" />
         </ResourceDictionary>
@@ -29,9 +32,13 @@
         <BackButtonBehavior TextOverride="" />
     </Shell.BackButtonBehavior>
 
-    <FlyoutItem >
+    <TabBar Route="Login" >
+        <ShellContent ContentTemplate="{DataTemplate views:LoginView}" />
+    </TabBar>
+
+    <!--<FlyoutItem>
         <ShellContent ContentTemplate="{DataTemplate views:LoginView}" Route="Login" />
-    </FlyoutItem>
+    </FlyoutItem>-->
 
     <TabBar Route="Main">
         <ShellContent Title="CATALOG" Route="Catalog" Icon="{StaticResource CatalogIconImageSource}" ContentTemplate="{DataTemplate views:CatalogView}" />
