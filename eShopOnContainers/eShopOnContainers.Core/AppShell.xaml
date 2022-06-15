@@ -43,6 +43,6 @@
     <TabBar Route="Main">
         <ShellContent Title="CATALOG" Route="Catalog" Icon="{StaticResource CatalogIconImageSource}" ContentTemplate="{DataTemplate views:CatalogView}" />
         <ShellContent Title="Anasayfa" Route="Profile" Icon="{StaticResource ProfileIconImageSource}" ContentTemplate="{DataTemplate views:Anasayfa}" />
-        <ShellContent Title="Katagoriler" Route="Profile" Icon="{StaticResource ProfileIconImageSource}" ContentTemplate="{DataTemplate views:Katagoriler}" />
+        <ShellContent Title="Katagoriler" Route="Profile" Icon="{StaticResource ProfileIconImageSource}" ContentTemplate="{DataTemplate views:MeyveVeSebze}" />
     </TabBar>
 </Shell>
