@@ -39,29 +39,6 @@ namespace eShopOnContainers.Core.ViewModels
         {
             return kService.getKatagori();
         }
-        //public ObservableCollection<KatagoriTurleri> Products
-        //{
-        //    get => _products;
-        //    set
-        //    {
-        //        _products = value;
-        //        RaisePropertyChanged(() => Products);
-        //    }
-        //}
-
-        //public override async Task InitializeAsync(IDictionary<string, string> query)
-        //{
-
-        //    // Get Catalog, Brands and Types
-        //    Products = await kService.getKatagori();
-
-        //}
-
-
-
-        //private ObservableCollection<KatagoriTurleri> GetKatagori()
-        //{
-        //   return kService.getKatagori();
-        //}
+        
     }
 }

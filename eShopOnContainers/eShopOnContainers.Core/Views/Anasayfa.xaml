@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:eShopOnContainers.Core.ViewModels"
              x:Class="eShopOnContainers.Core.Views.Anasayfa">
     <Shell.TitleView>
         <Image Source="a101kapida.png" ></Image>
-    </Shell.TitleView> 
+    </Shell.TitleView>
+    <ContentPage.BindingContext>
+        <viewmodels:AKatagoriViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView HeightRequest="1000">
             <StackLayout>
@@ -24,94 +27,46 @@
                         <ColumnDefinition Width="0.1*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <StackLayout Grid.Column="1">
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="domates.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" Clicked="Domates_Clicked"></ImageButton>
-                            <Label Text="Meyve Ve Sebze" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="Aldinaldin.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
-                            <Label Text="Aldın Aldın Nisan" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="icecek.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" Clicked="Icecek_Clicked"></ImageButton>
-                            <Label Text="İçecek" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="gidaurunleri.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White"></ImageButton>
-                            <Label Text="Gıda Ürünleri" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="dondurulmus.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
-                            <Label Text="Dondurulmuş" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="kozmetik.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White"></ImageButton>
-                            <Label Text="Kozmetik" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="mutfak.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" Clicked="Mutfak_Clicked"></ImageButton>
-                            <Label Text="Mutfak Gereçleri" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                   </StackLayout>
+                        <ListView ItemsSource="{Binding KT}" HasUnevenRows="true">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout BackgroundColor="White">
+                                            <ImageButton  Source="{Binding Image}" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
+                                            <Label Text="{Binding Name}" Padding="10,0,0,0"></Label>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
                     <StackLayout Grid.Column="2">
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="haftaninyildizlari.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White"></ImageButton>
-                            <Label Text="Haftanın Yıldızları" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="Aldinaldin.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White"></ImageButton>
-                            <Label Text="Elektroink Ürünleri" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="cokalazode.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
-                            <Label Text="Çok Al Az Öde" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="suturunleri.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
-                            <Label Text="Süt Ürünleri" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="dondurma.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
-                            <Label Text="Dondurma" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="annevebebek.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
-                            <Label Text="Anne ve Bebek" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="ofis.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
-                            <Label Text="Ofis Ve Kırtasiye" Padding="10,0,0,0"></Label>
-                        </StackLayout>
+                        <ListView ItemsSource="{Binding KT2}" HasUnevenRows="true">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout BackgroundColor="White">
+                                            <ImageButton  Source="{Binding Image}" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
+                                            <Label Text="{Binding Name}" Padding="10,0,0,0"></Label>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackLayout>
                     <StackLayout Grid.Column="3">
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="UnluMamuller.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" Clicked="UnluMamuller_Clicked"></ImageButton>
-                            <Label Text="Unlu Mamuller" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="Aldinaldin.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White"></ImageButton>
-                            <Label Text="Geçtiğimiz Hafta" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="atistirmalik.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" Clicked="Atistirmalik_Clicked"></ImageButton>
-                            <Label Text="Atıştırmalık" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="et.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" Clicked="Et_Clicked"></ImageButton>
-                            <Label Text="Et, Tavuk ve Balık" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="temizlik.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
-                            <Label Text="Temizlik Ürünleri" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="evveyasam.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
-                            <Label Text="Ev Ve Yaşam" Padding="10,0,0,0"></Label>
-                        </StackLayout>
-                        <StackLayout BackgroundColor="White">
-                            <ImageButton  Source="elektronik.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
-                            <Label Text="Elektronik" Padding="10,0,0,0"></Label>
-                        </StackLayout>
+                        <ListView ItemsSource="{Binding KT3}" HasUnevenRows="true">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout BackgroundColor="White">
+                                            <ImageButton  Source="{Binding Image}" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
+                                            <Label Text="{Binding Name}" Padding="10,0,0,0"></Label>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackLayout>
                 </Grid>
             </StackLayout>
@@ -121,3 +76,9 @@
         <ToolbarItem x:Name="marketBtn" Icon="shopping_cart.png"/>
     </ContentPage.ToolbarItems>
 </ContentPage>
+<!--<StackLayout BackgroundColor="White">
+                            <ImageButton  Source="elektronik.jpg" WidthRequest="100" HeightRequest="100" BackgroundColor="White" ></ImageButton>
+                            <Label Text="Elektronik" Padding="10,0,0,0"></Label>
+                        </StackLayout>-->
+    
+  

@@ -26,30 +26,5 @@ namespace eShopOnContainers.Core.Views
             };
             kaydirma.ItemsSource = list;
         }
-
-        private async void Domates_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MeyveVeSebze());
-        }
-        private async void Icecek_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new Icecek());
-        }
-        private async void Mutfak_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new Mutfak());
-        }
-        private async void UnluMamuller_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new UnluMamuller());
-        }
-        private async void Atistirmalik_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new Atistirmalik());
-        }
-        private async void Et_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new EtTavuk());
-        }
     }
 }
