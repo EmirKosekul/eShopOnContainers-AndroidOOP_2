@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace eShopOnContainers.Core.Services.Catalog
-{
+{   
     public class CatalogMockService : ICatalogService
     {
+        
+
         private ObservableCollection<CatalogBrand> MockCatalogBrand = new ObservableCollection<CatalogBrand>
         {
             // new CatalogBrand { Id = 1, Brand = "Azure" },

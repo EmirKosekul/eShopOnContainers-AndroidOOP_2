@@ -7,6 +7,7 @@ using eShopOnContainers.Core.Extensions;
 using System.Collections.Generic;
 using eShopOnContainers.Core.Services.FixUri;
 using eShopOnContainers.Core.Helpers;
+using Firebase.Database;
 
 namespace eShopOnContainers.Core.Services.Catalog
 {
@@ -16,6 +17,13 @@ namespace eShopOnContainers.Core.Services.Catalog
         private readonly IFixUriService _fixUriService;
 		
         private const string ApiUrlBase = "c/api/v1/catalog";
+        FirebaseClient client;
+
+        public CatalogService()
+        {
+            client = new FirebaseClient("https://oop2-6c2c3-default-rtdb.firebaseio.com/");
+        }
+
 
         public CatalogService(IRequestProvider requestProvider, IFixUriService fixUriService)
         {
