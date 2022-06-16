@@ -125,7 +125,7 @@ namespace eShopOnContainers.Core.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Invalid Username or Password", "OK");
+                    await Application.Current.MainPage.DisplayAlert("Hata", "Yanlış Kullanıcı adı veya parola", "OK");
                 }
             }
             catch (Exception ex)

@@ -1,4 +1,5 @@
-﻿using eShopOnContainers.Core.Models.Katagori;
+﻿using eShopOnContainers.Core.Models;
+using eShopOnContainers.Core.Models.Katagori;
 using eShopOnContainers.Core.Services.Dependency;
 using eShopOnContainers.Core.Services.Katagoriler;
 using eShopOnContainers.Core.ViewModels.Base;
@@ -15,7 +16,7 @@ namespace eShopOnContainers.Core.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         IKatagoriService kService;
-        private ObservableCollection<KatagoriTurleri> kt;
+        private ObservableCollection<Urun> kt;
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -25,17 +26,17 @@ namespace eShopOnContainers.Core.ViewModels
             kService = new KatagoriService();
             KT = GetKatagori();
         }
-        public ObservableCollection<KatagoriTurleri> KT
+        public ObservableCollection<Urun> KT
         {
             get { return kt; }
             set
             {
                 kt = value;
-                OnPropertyChanged("KatagoriTurleri");
+                OnPropertyChanged("Urun");
             }
         }
 
-        private ObservableCollection<KatagoriTurleri> GetKatagori()
+        private ObservableCollection<Urun> GetKatagori()
         {
             return kService.getKatagori();
         }

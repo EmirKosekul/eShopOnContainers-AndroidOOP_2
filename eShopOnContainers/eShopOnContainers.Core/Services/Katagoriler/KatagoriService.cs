@@ -1,4 +1,5 @@
-﻿using eShopOnContainers.Core.Models.Katagori;
+﻿using eShopOnContainers.Core.Models;
+using eShopOnContainers.Core.Models.Katagori;
 using Firebase.Database;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,9 @@ namespace eShopOnContainers.Core.Services.Katagoriler
         {
             client = new FirebaseClient("https://oop2-6c2c3-default-rtdb.firebaseio.com/");
         }
-        public  ObservableCollection<KatagoriTurleri> getKatagori()
+        public  ObservableCollection<Urun> getKatagori()
         {
-            var katagoriAl = client.Child("Katagoriler").AsObservable<KatagoriTurleri>().AsObservableCollection();
+            var katagoriAl = client.Child("Sepet").AsObservable<Urun>().AsObservableCollection();
             return katagoriAl;
         }
     }

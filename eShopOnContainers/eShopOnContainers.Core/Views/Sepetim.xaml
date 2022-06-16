@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:eShopOnContainers.Core.ViewModels"
+             x:Class="eShopOnContainers.Core.Views.Sepetim">
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Sepetim" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Title" TextColor="Black"></Label>
+        </Grid>
+    </Shell.TitleView>
+    <ContentPage.BindingContext>
+        <viewmodels:KatagoriViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout >
+            <ListView ItemsSource="{Binding KT}" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout HorizontalOptions="Center" >
+                                <Label Text="{Binding Name}">
+                                </Label>
+                                <Image  Source="{Binding Image}">
+                                </Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
